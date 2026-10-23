@@ -14,7 +14,7 @@ import useQuiz from "./hooks/useQuiz";
 import useSavedLibrary from "./hooks/useSavedLibrary";
 
 export default function Page() {
-  const previewRef = useRef(null);
+ const previewRef = useRef<HTMLElement | null>(null);
   const [error, setError] = useState("");
 
   const handlePreview = () => {

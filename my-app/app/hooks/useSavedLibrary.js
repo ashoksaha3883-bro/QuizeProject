@@ -12,7 +12,9 @@ export default function useSavedLibrary({
   setError,
 }) {
   const [saved, setSaved] = useState(false);
-  const [savedQuestions, setSavedQuestions] = useState([]);
+const [savedQuestions, setSavedQuestions] = useState(
+  /** @type {{ savedQuestionId: string | number; question: any; topic?: string; questionType?: string; selectedAnswer?: any; savedAt: string }[]} */ ([])
+);
   const [savedQuizzes, setSavedQuizzes] = useState([]);
   const [storageReady, setStorageReady] = useState(false);
   const [showSavedLibrary, setShowSavedLibrary] = useState(false);

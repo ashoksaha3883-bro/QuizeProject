@@ -6,8 +6,13 @@ import { shuffleArray } from "../lib/helper";
 
 export default function useQuiz({ setError, onPreview }) {
   const [sessionId, setSessionId] = useState("");
-  const [quiz, setQuiz] = useState(null);
-  const [quizSettings, setQuizSettings] = useState(null);
+ const [quiz, setQuiz] = useState(
+  /** @type {{ questions: any[] } | null} */ (null)
+);
+
+const [quizSettings, setQuizSettings] = useState(
+  /** @type {{ topic?: string; questionType?: string; shuffleQuestions?: boolean; includeExplanations?: boolean } | null} */ (null)
+);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [result, setResult] = useState(null);
